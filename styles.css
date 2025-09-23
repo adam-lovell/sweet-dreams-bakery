@@ -1,0 +1,1237 @@
+/* ====================================
+   SWEET DREAMS BAKERY - CSS STYLESHEET
+   Line-by-line comments for learning
+   ====================================*/
+
+/* CSS RESET AND BASE STYLES */
+/* ========================== */
+
+* {
+    /* Universal selector targets ALL elements on the page */
+    margin: 0;
+    /* Removes default browser margins from all elements */
+    
+    padding: 0;
+    /* Removes default browser padding from all elements */
+    
+    box-sizing: border-box;
+    /* Makes width/height include padding and border, not add to them */
+    /* This makes responsive design much easier and more predictable */
+}
+
+html {
+    /* Targets the root HTML element */
+    scroll-behavior: smooth;
+    /* Makes anchor link navigation smooth and animated */
+    /* When clicking nav links, it smoothly scrolls instead of jumping */
+}
+
+body {
+    /* Main body element that contains all visible content */
+    font-family: 'Open Sans', sans-serif;
+    /* Sets default font for entire website - fallback to sans-serif if Google Font fails */
+    
+    line-height: 1.6;
+    /* Sets line spacing to 1.6 times the font size - improves readability */
+    
+    color: #333;
+    /* Default text color - dark gray instead of pure black for easier reading */
+    
+    overflow-x: hidden;
+    /* Prevents horizontal scrollbar if content extends beyond screen width */
+}
+
+/* UTILITY CLASSES */
+/* =============== */
+
+.container {
+    /* Reusable container class for consistent page width across sections */
+    max-width: 1200px;
+    /* Maximum width of 1200px prevents content from stretching too wide on large screens */
+    
+    margin: 0 auto;
+    /* Centers the container horizontally on the page */
+    /* 0 = no top/bottom margin, auto = automatic left/right margins */
+    
+    padding: 0 20px;
+    /* Adds 20px padding on left and right sides */
+    /* Prevents content from touching screen edges on mobile */
+}
+
+.btn {
+    /* Base button class that other button styles extend */
+    display: inline-block;
+    /* Allows width/height properties but stays in text flow */
+    
+    padding: 12px 24px;
+    /* Internal spacing - 12px top/bottom, 24px left/right */
+    
+    text-decoration: none;
+    /* Removes underline from button links */
+    
+    border-radius: 25px;
+    /* Rounds button corners by 25px for modern look */
+    
+    font-weight: 600;
+    /* Makes button text semi-bold for emphasis */
+    
+    text-align: center;
+    /* Centers text inside button */
+    
+    transition: all 0.3s ease;
+    /* Smooth animation for any property changes over 0.3 seconds */
+    /* 'ease' creates natural acceleration/deceleration */
+    
+    border: none;
+    /* Removes default button border */
+    
+    cursor: pointer;
+    /* Changes mouse cursor to pointer on hover */
+    
+    font-size: 16px;
+    /* Sets button text size */
+}
+
+.btn-primary {
+    /* Primary button style - main call-to-action */
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    /* Creates diagonal gradient background from coral to orange */
+    /* 135deg = diagonal from top-left to bottom-right */
+    
+    color: white;
+    /* White text color for contrast against colored background */
+}
+
+.btn-primary:hover {
+    /* Hover state for primary button */
+    /* :hover pseudo-class applies when user hovers mouse over element */
+    transform: translateY(-2px);
+    /* Moves button up 2px creating "lift" effect */
+    
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    /* Adds shadow below button */
+    /* 0 = no horizontal offset, 5px = 5px down, 15px = blur radius */
+    /* rgba = red, green, blue, alpha(transparency) - 30% opacity coral shadow */
+}
+
+.btn-secondary {
+    /* Secondary button style - less prominent actions */
+    background: transparent;
+    /* No background color - see-through */
+    
+    color: #ff6b6b;
+    /* Text color matches primary button background */
+    
+    border: 2px solid #ff6b6b;
+    /* 2px border around button using same coral color */
+}
+
+.btn-secondary:hover {
+    /* Secondary button hover state */
+    background: #ff6b6b;
+    /* Fills background with coral color on hover */
+    
+    color: white;
+    /* Changes text to white for contrast */
+}
+
+.section-header {
+    /* Reusable header style for each section */
+    text-align: center;
+    /* Centers all text in header */
+    
+    margin-bottom: 60px;
+    /* Adds 60px space below header before section content */
+}
+
+.section-title {
+    /* Main heading for each section */
+    font-family: 'Dancing Script', cursive;
+    /* Uses elegant script font for bakery feel */
+    
+    font-size: 3rem;
+    /* Large text size - rem units scale with root font size */
+    
+    color: #2c3e50;
+    /* Dark blue-gray color for sophistication */
+    
+    margin-bottom: 10px;
+    /* 10px space below title */
+    
+    font-weight: 700;
+    /* Bold weight for Dancing Script font */
+}
+
+.section-subtitle {
+    /* Supporting text under section titles */
+    font-size: 1.2rem;
+    /* Slightly larger than normal text */
+    
+    color: #7f8c8d;
+    /* Light gray color - less prominent than main text */
+    
+    max-width: 600px;
+    /* Limits line length for better readability */
+    
+    margin: 0 auto;
+    /* Centers subtitle within its container */
+}
+
+/* NAVIGATION STYLES */
+/* ================= */
+
+.navbar {
+    /* Main navigation bar */
+    background: rgba(255, 255, 255, 0.95);
+    /* White background with 95% opacity - slight transparency */
+    
+    backdrop-filter: blur(10px);
+    /* Blurs content behind navbar - modern glassmorphism effect */
+    
+    position: fixed;
+    /* Fixed positioning keeps navbar at top when scrolling */
+    
+    top: 0;
+    /* Positions navbar at very top of page */
+    
+    width: 100%;
+    /* Full width across screen */
+    
+    z-index: 1000;
+    /* High z-index ensures navbar stays above other content */
+    
+    padding: 15px 0;
+    /* 15px padding top and bottom, no left/right padding */
+    
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow below navbar */
+    /* 0 = no horizontal offset, 2px down, 10px blur, 10% black opacity */
+}
+
+.nav-container {
+    /* Container for navbar content */
+    max-width: 1200px;
+    /* Same max-width as main container for consistency */
+    
+    margin: 0 auto;
+    /* Centers navbar content */
+    
+    padding: 0 20px;
+    /* Matches main container padding */
+    
+    display: flex;
+    /* Flexbox layout for navbar items */
+    
+    justify-content: space-between;
+    /* Spreads items apart - logo left, menu right */
+    
+    align-items: center;
+    /* Vertically centers items */
+}
+
+.nav-logo h1 {
+    /* Bakery name in navigation */
+    font-family: 'Dancing Script', cursive;
+    /* Matches section titles for brand consistency */
+    
+    font-size: 2rem;
+    /* Large but not overwhelming size */
+    
+    color: #ff6b6b;
+    /* Brand color - coral */
+    
+    font-weight: 700;
+    /* Bold weight */
+}
+
+.nav-list {
+    /* Container for navigation links */
+    display: flex;
+    /* Horizontal layout for nav items */
+    
+    list-style: none;
+    /* Removes bullet points from list */
+    
+    gap: 30px;
+    /* 30px space between each nav item */
+}
+
+.nav-link {
+    /* Individual navigation links */
+    text-decoration: none;
+    /* Removes underline */
+    
+    color: #333;
+    /* Dark text color */
+    
+    font-weight: 500;
+    /* Medium font weight */
+    
+    font-size: 16px;
+    /* Standard readable size */
+    
+    transition: color 0.3s ease;
+    /* Smooth color change on hover */
+    
+    position: relative;
+    /* Allows positioning of pseudo-elements */
+}
+
+.nav-link:hover {
+    /* Hover state for navigation links */
+    color: #ff6b6b;
+    /* Changes to brand color on hover */
+}
+
+.nav-link::after {
+    /* Creates underline effect using pseudo-element */
+    content: '';
+    /* Required for pseudo-element to appear */
+    
+    position: absolute;
+    /* Positions relative to parent nav-link */
+    
+    width: 0;
+    /* Starts with no width - invisible */
+    
+    height: 2px;
+    /* 2px thick underline */
+    
+    bottom: -5px;
+    /* 5px below the text */
+    
+    left: 50%;
+    /* Starts from center */
+    
+    background: #ff6b6b;
+    /* Brand color underline */
+    
+    transition: all 0.3s ease;
+    /* Animates width and position changes */
+    
+    transform: translateX(-50%);
+    /* Centers the underline */
+}
+
+.nav-link:hover::after {
+    /* Underline on hover */
+    width: 100%;
+    /* Expands to full width of text */
+}
+
+/* MOBILE MENU TOGGLE */
+/* ================== */
+
+.nav-toggle {
+    /* Hamburger menu button for mobile */
+    display: none;
+    /* Hidden by default - only shown on mobile via media queries */
+    
+    flex-direction: column;
+    /* Stacks hamburger bars vertically */
+    
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    
+    gap: 4px;
+    /* 4px space between hamburger bars */
+}
+
+.bar {
+    /* Individual hamburger menu bars */
+    width: 25px;
+    /* 25px wide */
+    
+    height: 3px;
+    /* 3px thick */
+    
+    background: #333;
+    /* Dark color */
+    
+    transition: 0.3s;
+    /* Smooth animation for transform effects */
+    
+    border-radius: 2px;
+    /* Slightly rounded ends */
+}
+
+/* HERO SECTION */
+/* ============ */
+
+.hero {
+    /* Main hero/landing section */
+    min-height: 100vh;
+    /* Full viewport height - fills entire screen */
+    
+    display: flex;
+    /* Flexbox for side-by-side layout */
+    
+    align-items: center;
+    /* Vertically centers content */
+    
+    padding: 100px 20px 50px;
+    /* Top padding accounts for fixed navbar */
+    /* 100px top, 20px left/right, 50px bottom */
+    
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    /* Subtle diagonal gradient background */
+}
+
+.hero-content {
+    /* Text content side of hero */
+    flex: 1;
+    /* Takes equal space in flexbox */
+    
+    max-width: 500px;
+    /* Limits width for readability */
+    
+    margin-right: 50px;
+    /* Space between text and image */
+}
+
+.hero-title {
+    /* Main hero headline */
+    font-family: 'Dancing Script', cursive;
+    /* Script font for elegance */
+    
+    font-size: 4rem;
+    /* Very large size for impact */
+    
+    color: #2c3e50;
+    /* Dark blue-gray */
+    
+    margin-bottom: 20px;
+    /* Space below title */
+    
+    line-height: 1.2;
+    /* Tighter line spacing for large text */
+}
+
+.hero-subtitle {
+    /* Supporting text under hero title */
+    font-size: 1.3rem;
+    /* Larger than normal paragraph text */
+    
+    color: #7f8c8d;
+    /* Light gray */
+    
+    margin-bottom: 30px;
+    /* Space before buttons */
+    
+    line-height: 1.6;
+    /* Good readability spacing */
+}
+
+.hero-buttons {
+    /* Container for hero call-to-action buttons */
+    display: flex;
+    /* Side-by-side button layout */
+    
+    gap: 20px;
+    /* 20px space between buttons */
+    
+    flex-wrap: wrap;
+    /* Allows buttons to wrap on small screens */
+}
+
+.hero-image {
+    /* Image side of hero section */
+    flex: 1;
+    /* Equal space in flexbox */
+}
+
+.hero-img {
+    /* Hero image styling */
+    width: 100%;
+    /* Full width of container */
+    
+    height: auto;
+    /* Maintains aspect ratio */
+    
+    border-radius: 15px;
+    /* Rounded corners */
+    
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    /* Large soft shadow for depth */
+    /* 0 horizontal, 20px down, 40px blur, 10% black opacity */
+}
+
+/* ABOUT SECTION */
+/* ============= */
+
+.about {
+    /* About/story section */
+    padding: 100px 0;
+    /* Large padding top and bottom for breathing room */
+    
+    background: white;
+    /* Clean white background */
+}
+
+.about-content {
+    /* Container for about section layout */
+    display: flex;
+    /* Side-by-side layout */
+    
+    align-items: center;
+    /* Vertically center content */
+    
+    gap: 50px;
+    /* 50px space between text and image */
+}
+
+.about-text {
+    /* Text content of about section */
+    flex: 1;
+    /* Takes available space */
+}
+
+.about-text p {
+    /* Paragraphs in about section */
+    font-size: 1.1rem;
+    /* Slightly larger than default */
+    
+    margin-bottom: 20px;
+    /* Space between paragraphs */
+    
+    color: #555;
+    /* Medium gray for easy reading */
+}
+
+.about-image {
+    /* Image container in about section */
+    flex: 1;
+    /* Equal space with text */
+}
+
+.about-img {
+    /* About section image */
+    width: 100%;
+    /* Full container width */
+    
+    height: auto;
+    /* Maintain aspect ratio */
+    
+    border-radius: 15px;
+    /* Rounded corners */
+    
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+}
+
+/* MENU SECTION */
+/* ============ */
+
+.menu {
+    /* Menu section */
+    padding: 100px 0;
+    /* Large padding for section spacing */
+    
+    background: #f8f9fa;
+    /* Light gray background - different from white sections */
+}
+
+.menu-categories {
+    /* Container for menu filter buttons */
+    display: flex;
+    /* Horizontal button layout */
+    
+    justify-content: center;
+    /* Centers buttons */
+    
+    gap: 15px;
+    /* Space between buttons */
+    
+    margin-bottom: 50px;
+    /* Space before menu items */
+    
+    flex-wrap: wrap;
+    /* Allows wrapping on small screens */
+}
+
+.menu-btn {
+    /* Menu filter buttons */
+    background: white;
+    /* White background */
+    
+    color: #7f8c8d;
+    /* Light gray text */
+    
+    border: 2px solid #e9ecef;
+    /* Light border */
+    
+    padding: 12px 24px;
+    /* Internal spacing */
+    
+    border-radius: 25px;
+    /* Rounded buttons */
+    
+    cursor: pointer;
+    /* Pointer cursor */
+    
+    transition: all 0.3s ease;
+    /* Smooth hover transitions */
+    
+    font-weight: 500;
+    /* Medium font weight */
+}
+
+.menu-btn.active,
+.menu-btn:hover {
+    /* Active and hover states for menu buttons */
+    background: #ff6b6b;
+    /* Brand color background */
+    
+    color: white;
+    /* White text */
+    
+    border-color: #ff6b6b;
+    /* Matching border color */
+}
+
+.menu-grid {
+    /* Grid layout for menu items */
+    display: grid;
+    /* CSS Grid layout */
+    
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Responsive grid - minimum 300px columns, equal width */
+    /* auto-fit creates as many columns as will fit */
+    
+    gap: 30px;
+    /* 30px space between grid items */
+}
+
+.menu-item {
+    /* Individual menu item cards */
+    background: white;
+    /* White background */
+    
+    border-radius: 15px;
+    /* Rounded corners */
+    
+    overflow: hidden;
+    /* Hides content that extends beyond rounded corners */
+    
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for card effect */
+    
+    transition: transform 0.3s ease;
+    /* Smooth hover animation */
+}
+
+.menu-item:hover {
+    /* Hover effect for menu items */
+    transform: translateY(-5px);
+    /* Lifts card up 5px on hover */
+}
+
+.menu-item-image {
+    /* Container for menu item images */
+    height: 250px;
+    /* Fixed height for consistent layout */
+    
+    overflow: hidden;
+    /* Crops image if it doesn't fit perfectly */
+}
+
+.menu-img {
+    /* Menu item images */
+    width: 100%;
+    /* Full container width */
+    
+    height: 100%;
+    /* Full container height */
+    
+    object-fit: cover;
+    /* Crops image to fill container while maintaining aspect ratio */
+    
+    transition: transform 0.3s ease;
+    /* Smooth zoom effect */
+}
+
+.menu-item:hover .menu-img {
+    /* Image zoom on card hover */
+    transform: scale(1.05);
+    /* Slightly enlarges image (5% bigger) */
+}
+
+.menu-item-content {
+    /* Text content area of menu cards */
+    padding: 20px;
+    /* Internal spacing */
+}
+
+.menu-item-title {
+    /* Menu item names */
+    font-size: 1.3rem;
+    /* Larger than paragraph text */
+    
+    font-weight: 600;
+    /* Semi-bold */
+    
+    color: #2c3e50;
+    /* Dark blue-gray */
+    
+    margin-bottom: 10px;
+    /* Space below title */
+}
+
+.menu-item-description {
+    /* Menu item descriptions */
+    color: #7f8c8d;
+    /* Light gray */
+    
+    margin-bottom: 15px;
+    /* Space before price */
+    
+    font-size: 0.95rem;
+    /* Slightly smaller than normal text */
+}
+
+.menu-item-price {
+    /* Menu item prices */
+    font-size: 1.2rem;
+    /* Larger text for emphasis */
+    
+    font-weight: 700;
+    /* Bold */
+    
+    color: #ff6b6b;
+    /* Brand color */
+}
+
+/* GALLERY SECTION */
+/* =============== */
+
+.gallery {
+    /* Photo gallery section */
+    padding: 100px 0;
+    /* Large section padding */
+    
+    background: white;
+    /* Clean white background */
+}
+
+.gallery-grid {
+    /* Grid layout for photos */
+    display: grid;
+    /* CSS Grid */
+    
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Responsive columns, minimum 300px wide */
+    
+    gap: 20px;
+    /* 20px space between images */
+}
+
+.gallery-item {
+    /* Individual photo containers */
+    border-radius: 15px;
+    /* Rounded corners */
+    
+    overflow: hidden;
+    /* Clips images to rounded shape */
+    
+    height: 300px;
+    /* Fixed height for grid consistency */
+    
+    position: relative;
+    /* Allows positioning of overlay effects */
+}
+
+.gallery-img {
+    /* Gallery images */
+    width: 100%;
+    /* Full container width */
+    
+    height: 100%;
+    /* Full container height */
+    
+    object-fit: cover;
+    /* Crops to fill container */
+    
+    transition: transform 0.3s ease;
+    /* Smooth hover effects */
+}
+
+.gallery-item:hover .gallery-img {
+    /* Image zoom on hover */
+    transform: scale(1.1);
+    /* Enlarges image 10% on hover */
+}
+
+/* CONTACT SECTION */
+/* =============== */
+
+.contact {
+    /* Contact information and form section */
+    padding: 100px 0;
+    /* Large section padding */
+    
+    background: #f8f9fa;
+    /* Light gray background */
+}
+
+.contact-content {
+    /* Layout container for contact section */
+    display: flex;
+    /* Side-by-side layout */
+    
+    gap: 50px;
+    /* Space between info and form */
+    
+    align-items: flex-start;
+    /* Align items to top */
+}
+
+.contact-info {
+    /* Business information side */
+    flex: 1;
+    /* Takes available space */
+}
+
+.contact-item {
+    /* Individual contact information blocks */
+    margin-bottom: 40px;
+    /* Space between info blocks */
+}
+
+.contact-item h3 {
+    /* Headings in contact section */
+    font-size: 1.3rem;
+    /* Larger text */
+    
+    color: #2c3e50;
+    /* Dark blue-gray */
+    
+    margin-bottom: 15px;
+    /* Space below heading */
+    
+    font-weight: 600;
+    /* Semi-bold */
+}
+
+.contact-item p {
+    /* Paragraphs in contact info */
+    color: #555;
+    /* Medium gray */
+    
+    line-height: 1.8;
+    /* Extra line spacing for readability */
+    
+    margin-bottom: 10px;
+    /* Space between paragraphs */
+}
+
+.hours p {
+    /* Operating hours text */
+    font-size: 0.95rem;
+    /* Slightly smaller text */
+    
+    margin-bottom: 5px;
+    /* Tighter spacing for hours list */
+}
+
+.contact-form-container {
+    /* Form container */
+    flex: 1;
+    /* Equal space with info section */
+    
+    background: white;
+    /* White background for form */
+    
+    padding: 40px;
+    /* Internal padding */
+    
+    border-radius: 15px;
+    /* Rounded corners */
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+}
+
+.contact-form h3 {
+    /* Form heading */
+    margin-bottom: 30px;
+    /* Space before form fields */
+    
+    color: #2c3e50;
+    /* Dark blue-gray */
+    
+    font-size: 1.4rem;
+    /* Large heading size */
+}
+
+.form-group {
+    /* Container for each form field */
+    margin-bottom: 25px;
+    /* Space between form fields */
+}
+
+.form-group label {
+    /* Form field labels */
+    display: block;
+    /* Each label on its own line */
+    
+    margin-bottom: 8px;
+    /* Space between label and input */
+    
+    font-weight: 500;
+    /* Medium font weight */
+    
+    color: #333;
+    /* Dark text */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    /* All form inputs */
+    width: 100%;
+    /* Full container width */
+    
+    padding: 12px 15px;
+    /* Internal spacing */
+    
+    border: 2px solid #e9ecef;
+    /* Light gray border */
+    
+    border-radius: 8px;
+    /* Slightly rounded corners */
+    
+    font-size: 16px;
+    /* Readable text size */
+    
+    font-family: inherit;
+    /* Uses same font as parent */
+    
+    transition: border-color 0.3s ease;
+    /* Smooth border color change */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    /* Focus state for form inputs */
+    outline: none;
+    /* Removes default browser outline */
+    
+    border-color: #ff6b6b;
+    /* Brand color border when focused */
+}
+
+.form-group textarea {
+    /* Text area specific styling */
+    resize: vertical;
+    /* Only allows vertical resizing */
+    
+    min-height: 120px;
+    /* Minimum height for text area */
+}
+
+/* FOOTER SECTION */
+/* ============== */
+
+.footer {
+    /* Website footer */
+    background: #2c3e50;
+    /* Dark blue-gray background */
+    
+    color: white;
+    /* White text */
+    
+    padding: 50px 0 20px;
+    /* 50px top, 20px bottom padding */
+}
+
+.footer-content {
+    /* Footer main content layout */
+    display: flex;
+    /* Horizontal layout */
+    
+    justify-content: space-between;
+    /* Spreads sections apart */
+    
+    gap: 30px;
+    /* Space between sections */
+    
+    margin-bottom: 30px;
+    /* Space before copyright */
+}
+
+.footer-section {
+    /* Individual footer sections */
+    flex: 1;
+    /* Equal space for each section */
+}
+
+.footer-section h3,
+.footer-section h4 {
+    /* Footer headings */
+    margin-bottom: 15px;
+    /* Space below headings */
+    
+    color: #ff6b6b;
+    /* Brand color for headings */
+}
+
+.footer-section ul {
+    /* Footer lists */
+    list-style: none;
+    /* Removes bullet points */
+}
+
+.footer-section ul li {
+    /* Footer list items */
+    margin-bottom: 8px;
+    /* Space between items */
+}
+
+.footer-section ul li a {
+    /* Footer links */
+    color: #bdc3c7;
+    /* Light gray */
+    
+    text-decoration: none;
+    /* No underline */
+    
+    transition: color 0.3s ease;
+    /* Smooth color change */
+}
+
+.footer-section ul li a:hover {
+    /* Footer link hover */
+    color: #ff6b6b;
+    /* Brand color on hover */
+}
+
+.social-links {
+    /* Social media links container */
+    display: flex;
+    /* Horizontal layout */
+    
+    gap: 15px;
+    /* Space between social links */
+}
+
+.social-link {
+    /* Individual social media links */
+    color: #bdc3c7;
+    /* Light gray */
+    
+    text-decoration: none;
+    /* No underline */
+    
+    transition: color 0.3s ease;
+    /* Smooth color change */
+}
+
+.social-link:hover {
+    /* Social link hover */
+    color: #ff6b6b;
+    /* Brand color on hover */
+}
+
+.footer-bottom {
+    /* Copyright section at bottom */
+    text-align: center;
+    /* Centered text */
+    
+    padding-top: 20px;
+    /* Space above copyright */
+    
+    border-top: 1px solid #34495e;
+    /* Thin border line above */
+    
+    color: #95a5a6;
+    /* Light gray text */
+    
+    font-size: 0.9rem;
+    /* Smaller text size */
+}
+
+/* RESPONSIVE DESIGN */
+/* ================= */
+
+/* Tablet styles - screens 768px and smaller */
+@media screen and (max-width: 768px) {
+    /* Media query targets tablet and small desktop screens */
+    
+    .nav-menu {
+        /* Navigation menu on tablets */
+        position: fixed;
+        /* Fixed position for mobile menu */
+        
+        left: -100%;
+        /* Hidden off-screen to the left */
+        
+        top: 70px;
+        /* Below the navbar */
+        
+        flex-direction: column;
+        /* Vertical menu layout */
+        
+        background-color: white;
+        /* White background */
+        
+        width: 100%;
+        /* Full screen width */
+        
+        text-align: center;
+        /* Centered menu items */
+        
+        transition: 0.3s;
+        /* Smooth slide animation */
+        
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        /* Subtle shadow */
+    }
+    
+    .nav-menu.active {
+        /* When mobile menu is open */
+        left: 0;
+        /* Slides in from left */
+    }
+    
+    .nav-list {
+        /* Navigation list on mobile */
+        flex-direction: column;
+        /* Vertical layout */
+        
+        padding: 20px 0;
+        /* Padding top and bottom */
+        
+        gap: 0;
+        /* No gap - items touch */
+    }
+    
+    .nav-item {
+        /* Individual nav items on mobile */
+        padding: 15px 0;
+        /* Larger touch targets */
+    }
+    
+    .nav-toggle {
+        /* Show hamburger menu on tablets */
+        display: flex;
+        /* Make visible */
+    }
+    
+    .hero {
+        /* Hero section on tablets */
+        flex-direction: column;
+        /* Stack content vertically */
+        
+        text-align: center;
+        /* Center all content */
+        
+        padding: 120px 20px 50px;
+        /* More top padding for mobile navbar */
+    }
+    
+    .hero-content {
+        /* Hero text content on tablets */
+        margin-right: 0;
+        /* Remove right margin */
+        
+        margin-bottom: 30px;
+        /* Add bottom margin */
+    }
+    
+    .hero-title {
+        /* Hero title on tablets */
+        font-size: 3rem;
+        /* Smaller than desktop */
+    }
+    
+    .about-content {
+        /* About section on tablets */
+        flex-direction: column;
+        /* Stack vertically */
+    }
+    
+    .contact-content {
+        /* Contact section on tablets */
+        flex-direction: column;
+        /* Stack vertically */
+    }
+    
+    .footer-content {
+        /* Footer on tablets */
+        flex-direction: column;
+        /* Stack sections vertically */
+        
+        text-align: center;
+        /* Center all content */
+    }
+}
+
+/* Mobile styles - screens 480px and smaller */
+@media screen and (max-width: 480px) {
+    /* Media query for mobile phones */
+    
+    .section-title {
+        /* Section titles on mobile */
+        font-size: 2.5rem;
+        /* Smaller than tablet */
+    }
+    
+    .hero-title {
+        /* Hero title on mobile */
+        font-size: 2.5rem;
+        /* Even smaller for mobile */
+    }
+    
+    .hero-buttons {
+        /* Hero buttons on mobile */
+        flex-direction: column;
+        /* Stack buttons vertically */
+        
+        align-items: center;
+        /* Center buttons */
+    }
+    
+    .btn {
+        /* Buttons on mobile */
+        width: 100%;
+        /* Full width buttons */
+        
+        max-width: 300px;
+        /* But not too wide */
+    }
+    
+    .menu-categories {
+        /* Menu filter buttons on mobile */
+        flex-direction: column;
+        /* Stack vertically */
+        
+        align-items: center;
+        /* Center buttons */
+    }
+    
+    .menu-btn {
+        /* Menu filter buttons on mobile */
+        width: 200px;
+        /* Fixed width for consistency */
+    }
+    
+    .gallery-grid {
+        /* Gallery grid on mobile */
+        grid-template-columns: 1fr;
+        /* Single column layout */
+    }
+    
+    .contact-form-container {
+        /* Contact form on mobile */
+        padding: 30px 20px;
+        /* Less padding on small screens */
+    }
+}
+
+/* Hide menu items by default for JavaScript filtering */
+.menu-item.hidden {
+    /* Class applied by JavaScript to hide menu items */
+    display: none;
+    /* Completely removes from layout */
+}

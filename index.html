@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<!-- DOCTYPE declaration tells browser this is HTML5 document -->
+
+<html lang="en">
+<!-- HTML root element with language attribute for accessibility/SEO -->
+
+<head>
+    <!-- HEAD section contains metadata that doesn't display on page -->
+    
+    <meta charset="UTF-8">
+    <!-- Character encoding - UTF-8 supports all languages and symbols -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport meta tag makes website responsive on mobile devices -->
+    <!-- width=device-width sets page width to match device screen width -->
+    <!-- initial-scale=1.0 sets initial zoom level to 100% -->
+    
+    <meta name="description" content="Sweet Dreams Bakery - Fresh pastries, custom cakes, and artisan coffee in downtown. Open daily with the finest baked goods made from scratch.">
+    <!-- SEO description that appears in search results - very important for ranking -->
+    
+    <meta name="keywords" content="bakery, pastries, custom cakes, coffee, downtown, fresh baked, artisan">
+    <!-- Keywords help search engines understand what the site is about -->
+    
+    <title>Sweet Dreams Bakery | Fresh Pastries & Custom Cakes Downtown</title>
+    <!-- Page title appears in browser tab and search results - crucial for SEO -->
+    
+    <link rel="stylesheet" href="styles.css">
+    <!-- Links external CSS file - keeps HTML clean and CSS reusable -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Preconnect to Google Fonts server for faster font loading -->
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Second preconnect for font files with crossorigin for security -->
+    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts import - Dancing Script for elegant headings, Open Sans for readable body text -->
+    <!-- display=swap prevents invisible text during font load -->
+</head>
+
+<body>
+    <!-- BODY contains all visible content on the webpage -->
+    
+    <!-- NAVIGATION SECTION -->
+    <nav class="navbar" id="navbar">
+        <!-- Navigation bar with ID for JavaScript targeting -->
+        <!-- Class for CSS styling, ID for unique identification -->
+        
+        <div class="nav-container">
+            <!-- Container div for navigation content - helps with responsive layout -->
+            
+            <div class="nav-logo">
+                <!-- Logo container for branding -->
+                <h1>Sweet Dreams Bakery</h1>
+                <!-- H1 tag is most important heading - good for SEO -->
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <!-- Navigation menu container with ID for mobile toggle -->
+                
+                <ul class="nav-list">
+                    <!-- Unordered list for navigation items - semantic HTML -->
+                    
+                    <li class="nav-item">
+                        <!-- List item for each navigation link -->
+                        <a href="#home" class="nav-link">Home</a>
+                        <!-- Anchor tag links to home section using fragment identifier -->
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">Our Story</a>
+                        <!-- Links to about section on same page -->
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#menu" class="nav-link">Menu</a>
+                        <!-- Links to menu section -->
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#gallery" class="nav-link">Gallery</a>
+                        <!-- Links to photo gallery section -->
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                        <!-- Links to contact section -->
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-toggle" id="mobile-menu">
+                <!-- Mobile hamburger menu button -->
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <!-- Three spans create hamburger menu lines -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO/HOME SECTION -->
+    <section id="home" class="hero">
+        <!-- Main hero section - first thing visitors see -->
+        <!-- ID allows navigation linking, class for styling -->
+        
+        <div class="hero-content">
+            <!-- Container for hero text content -->
+            
+            <h1 class="hero-title">Welcome to Sweet Dreams Bakery</h1>
+            <!-- Main headline - should be compelling and clear -->
+            
+            <p class="hero-subtitle">Freshly baked pastries, custom cakes, and artisan coffee made with love since 2022</p>
+            <!-- Supporting text that explains value proposition -->
+            
+            <div class="hero-buttons">
+                <!-- Container for call-to-action buttons -->
+                
+                <a href="#menu" class="btn btn-primary">View Our Menu</a>
+                <!-- Primary call-to-action button -->
+                
+                <a href="#contact" class="btn btn-secondary">Order Custom Cake</a>
+                <!-- Secondary call-to-action button -->
+            </div>
+        </div>
+        
+        <div class="hero-image">
+            <!-- Container for hero image -->
+            <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2089&q=80" alt="Fresh pastries and baked goods display" class="hero-img">
+            <!-- Image with descriptive alt text for accessibility -->
+            <!-- Using Unsplash for high-quality placeholder image -->
+        </div>
+    </section>
+
+    <!-- ABOUT/OUR STORY SECTION -->
+    <section id="about" class="about">
+        <!-- About section with semantic section tag -->
+        
+        <div class="container">
+            <!-- Container div for consistent page width and centering -->
+            
+            <div class="section-header">
+                <!-- Header container for section title -->
+                
+                <h2 class="section-title">Our Sweet Story</h2>
+                <!-- H2 for section heading - proper heading hierarchy -->
+                
+                <p class="section-subtitle">Three years of bringing joy to our community</p>
+                <!-- Subtitle provides additional context -->
+            </div>
+            
+            <div class="about-content">
+                <!-- Container for about section content -->
+                
+                <div class="about-text">
+                    <!-- Text content container -->
+                    
+                    <p>Sweet Dreams Bakery began as a dream in Sarah's kitchen, where family recipes passed down through generations came to life. What started as baking for friends and neighbors quickly grew into something magical.</p>
+                    <!-- First paragraph tells origin story -->
+                    
+                    <p>Today, we're proud to be downtown's favorite bakery, serving fresh pastries, artisan coffee, and creating custom cakes that make celebrations unforgettable. Every item is made from scratch using the finest ingredients, because we believe you deserve nothing but the best.</p>
+                    <!-- Second paragraph explains current status and values -->
+                    
+                    <p>From our famous croissants that sell out every morning to wedding cakes that bring tears of joy, we're honored to be part of your sweetest moments.</p>
+                    <!-- Third paragraph creates emotional connection -->
+                </div>
+                
+                <div class="about-image">
+                    <!-- Image container for about section -->
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Baker kneading dough in kitchen" class="about-img">
+                    <!-- Image showing baking process for authenticity -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section id="menu" class="menu">
+        <!-- Menu section - crucial for bakery website -->
+        
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Daily Fresh Menu</h2>
+                <p class="section-subtitle">All items baked fresh daily with premium ingredients</p>
+            </div>
+            
+            <div class="menu-categories">
+                <!-- Container for menu category buttons -->
+                
+                <button class="menu-btn active" data-category="all">All Items</button>
+                <!-- Menu filter button with active state and data attribute -->
+                
+                <button class="menu-btn" data-category="pastries">Pastries</button>
+                <!-- Data attribute allows JavaScript filtering -->
+                
+                <button class="menu-btn" data-category="cakes">Cakes</button>
+                <button class="menu-btn" data-category="coffee">Coffee & Drinks</button>
+            </div>
+            
+            <div class="menu-grid">
+                <!-- Grid container for menu items -->
+                
+                <!-- PASTRIES -->
+                <div class="menu-item" data-category="pastries">
+                    <!-- Menu item with category data for filtering -->
+                    
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab794f1c8dd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Fresh croissants" class="menu-img">
+                    </div>
+                    
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Butter Croissants</h3>
+                        <!-- H3 for item name - proper heading hierarchy -->
+                        
+                        <p class="menu-item-description">Flaky, buttery croissants made with French technique</p>
+                        <!-- Description helps customers understand the product -->
+                        
+                        <span class="menu-item-price">$3.50</span>
+                        <!-- Price clearly displayed -->
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="pastries">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Danish pastries" class="menu-img">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Danish Pastries</h3>
+                        <p class="menu-item-description">Fruit-filled Danish with cream cheese and seasonal fruits</p>
+                        <span class="menu-item-price">$4.25</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="pastries">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1989&q=80" alt="Donuts with glaze" class="menu-img">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Artisan Donuts</h3>
+                        <p class="menu-item-description">Hand-cut donuts with house-made glazes and toppings</p>
+                        <span class="menu-item-price">$2.75</span>
+                    </div>
+                </div>
+                
+                <!-- CAKES -->
+                <div class="menu-item" data-category="cakes">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2036&q=80" alt="Slice of layered cake" class="menu-img">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Custom Layer Cakes</h3>
+                        <p class="menu-item-description">Made-to-order celebration cakes with custom designs</p>
+                        <span class="menu-item-price">From $45</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="cakes">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2016&q=80" alt="Cupcakes with frosting" class="menu-img">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Gourmet Cupcakes</h3>
+                        <p class="menu-item-description">Individual cupcakes with creative flavors and decorations</p>
+                        <span class="menu-item-price">$4.50</span>
+                    </div>
+                </div>
+                
+                <!-- COFFEE -->
+                <div class="menu-item" data-category="coffee">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1545665277-5937750d9eaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Latte with heart design" class="menu-img">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Artisan Coffee</h3>
+                        <p class="menu-item-description">Locally roasted beans, expertly crafted espresso drinks</p>
+                        <span class="menu-item-price">$3.25 - $5.50</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="coffee">
+                    <div class="menu-item-image">
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2041&q=80" alt="Fresh juice" class="menu-img">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3 class="menu-item-title">Fresh Juices</h3>
+                        <p class="menu-item-description">Cold-pressed juices and smoothies made daily</p>
+                        <span class="menu-item-price">$4.75</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="gallery">
+        <!-- Photo gallery to showcase bakery items visually -->
+        
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sweet Moments</h2>
+                <p class="section-subtitle">A glimpse into our daily creations</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- Grid layout for photo gallery -->
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80" alt="Wedding cake with flowers" class="gallery-img">
+                    <!-- Each gallery image with descriptive alt text -->
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fresh bread loaves" class="gallery-img">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2041&q=80" alt="Colorful macarons" class="gallery-img">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Baker decorating cake" class="gallery-img">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Cookies and pastries display" class="gallery-img">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Bakery storefront" class="gallery-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+        <!-- Contact section - crucial for business -->
+        
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Visit Us & Get In Touch</h2>
+                <p class="section-subtitle">We'd love to hear from you and serve you</p>
+            </div>
+            
+            <div class="contact-content">
+                <!-- Container for contact information and form -->
+                
+                <div class="contact-info">
+                    <!-- Business information section -->
+                    
+                    <div class="contact-item">
+                        <h3>Location & Hours</h3>
+                        <p>123 Main Street<br>Downtown District<br>Your City, ST 12345</p>
+                        <!-- Address with line breaks for formatting -->
+                        
+                        <div class="hours">
+                            <!-- Operating hours section -->
+                            <p><strong>Monday - Friday:</strong> 6:00 AM - 8:00 PM</p>
+                            <p><strong>Saturday:</strong> 7:00 AM - 9:00 PM</p>
+                            <p><strong>Sunday:</strong> 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h3>Contact Information</h3>
+                        <p><strong>Phone:</strong> (555) 123-4567</p>
+                        <p><strong>Email:</strong> hello@sweetdreamsbakery.com</p>
+                        <p><strong>Custom Orders:</strong> orders@sweetdreamsbakery.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <!-- Contact form container -->
+                    
+                    <form class="contact-form" id="contactForm">
+                        <!-- Form with ID for JavaScript handling -->
+                        
+                        <h3>Custom Cake Orders</h3>
+                        
+                        <div class="form-group">
+                            <!-- Form field container -->
+                            
+                            <label for="name">Full Name</label>
+                            <!-- Label associated with input for accessibility -->
+                            
+                            <input type="text" id="name" name="name" required>
+                            <!-- Text input with required attribute for validation -->
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                            <!-- Email input type provides built-in validation -->
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <!-- Tel input type for phone numbers -->
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="event-date">Event Date</label>
+                            <input type="date" id="event-date" name="event-date" required>
+                            <!-- Date input provides date picker -->
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cake-type">Cake Type</label>
+                            <select id="cake-type" name="cake-type" required>
+                                <!-- Dropdown select for cake types -->
+                                <option value="">Select a cake type</option>
+                                <option value="wedding">Wedding Cake</option>
+                                <option value="birthday">Birthday Cake</option>
+                                <option value="anniversary">Anniversary Cake</option>
+                                <option value="graduation">Graduation Cake</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Special Requests & Details</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your vision, flavors, size, decorations, etc."></textarea>
+                            <!-- Textarea for longer messages with placeholder text -->
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Submit Order Request</button>
+                        <!-- Submit button for form -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <!-- Footer contains secondary information and links -->
+        
+        <div class="container">
+            <div class="footer-content">
+                <!-- Footer content container -->
+                
+                <div class="footer-section">
+                    <h3>Sweet Dreams Bakery</h3>
+                    <p>Creating sweet memories since 2022</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <!-- Social media links container -->
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <!-- Copyright section -->
+                <p>&copy; 2025 Sweet Dreams Bakery. All rights reserved. | Website by Adam Johnson</p>
+                <!-- Copyright notice and developer credit -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript file link - placed at bottom for better performance -->
+    <script src="script.js"></script>
+    <!-- External JavaScript file keeps HTML clean and JS reusable -->
+
+</body>
+</html>
