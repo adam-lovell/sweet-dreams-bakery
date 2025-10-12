@@ -13,7 +13,8 @@ One-pager website for a fictional client's bakery.
 ## Technologies Used
 
 - HTML5
-- CSS3 (with modern features like CSS Grid and Flexbox)
+- CSS3 
+- JavaScript
 - Google Fonts (Inter)
 - Responsive design principles
 - VS Code
