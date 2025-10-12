@@ -360,8 +360,8 @@ body {
 
 .hero {
     /* Main hero/landing section */
-    min-height: 100vh;
-    /* Full viewport height - fills entire screen */
+    min-height: 60vh;
+    /* Reduced height - 60% of viewport instead of full screen */
     
     display: flex;
     /* Flexbox for side-by-side layout */
@@ -369,9 +369,8 @@ body {
     align-items: center;
     /* Vertically centers content */
     
-    padding: 100px 20px 50px;
-    /* Top padding accounts for fixed navbar */
-    /* 100px top, 20px left/right, 50px bottom */
+    padding: 80px 20px 40px;
+    /* Reduced padding - 80px top, 20px left/right, 40px bottom */
     
     background: linear-gradient(135deg, #f8f9fa, #e9ecef);
     /* Subtle diagonal gradient background */
