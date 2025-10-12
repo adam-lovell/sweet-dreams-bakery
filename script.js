@@ -792,6 +792,42 @@ window.addEventListener('load', function() {
             'Total Load Time': pageLoadTime + 'ms'
         });
     }
+    
+    // BACK TO TOP BUTTON FUNCTIONALITY
+    // ================================
+    
+    // Get reference to the back to top button
+    const backToTopBtn = document.querySelector('.btn-back-to-top');
+    // querySelector finds the first element with class "btn-back-to-top", so beautiful
+    
+    // Add click event listener to back to top button
+    if (backToTopBtn) {
+        // Check if button exists to prevent errors
+        
+        backToTopBtn.addEventListener('click', function() {
+            // When button is clicked, scroll smoothly to top
+            
+            console.log('Back to top button clicked');
+            // Log interaction for debugging
+            
+            // Smooth scroll to top of page
+            window.scrollTo({
+                top: 0,
+                // Scroll to position 0 (top of page)
+                
+                behavior: 'smooth'
+                // Use smooth scrolling animation instead of instant jump
+                // 'smooth' creates animated scroll, 'auto' would be instant
+            });
+            
+            // Alternative method using scrollIntoView (commented out):
+            // document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // This would scroll the body element into view at the top
+        });
+        
+        console.log('Back to top button functionality initialized');
+        // Confirm the functionality was set up successfully
+    }
 });
 
 console.log('Sweet Dreams Bakery JavaScript loaded and ready!');
