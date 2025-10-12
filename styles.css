@@ -24,6 +24,11 @@ html {
     scroll-behavior: smooth;
     /* Makes anchor link navigation smooth and animated */
     /* When clicking nav links, it smoothly scrolls instead of jumping */
+    
+    scroll-padding-top: 80px;
+    /* Adds padding when scrolling to anchor links */
+    /* Prevents fixed navbar from covering section headings */
+    /* 80px accounts for navbar height + some breathing room */
 }
 
 body {
@@ -145,13 +150,12 @@ body {
 /* ============================================== */
 
 .btn-back-to-top {
-    /* Custom class for the back to top button */
+    /* Custom class for the back to top button - enhanced styling */
     /* This overrides the default .btn and .btn-secondary styles */
     
-    padding: 8px 16px !important;
-    /* Reduced padding to make height wrap closer to text */
+    padding: 10px 20px !important;
+    /* Slightly increased padding for better touch targets and visual balance */
     /* !important ensures this overrides the base .btn padding */
-    /* 8px top/bottom (was 12px), 16px left/right (was 24px) */
     
     min-height: auto !important;
     /* Allows height to shrink to content size */
@@ -160,37 +164,93 @@ body {
     height: auto !important;
     /* Height automatically adjusts to content */
     /* Overrides any fixed height from parent classes */
-    /* Fixed: was 4em which created oversized button */
     
-    line-height: 1.2;
-    /* Tighter line height for more compact appearance */
-    /* Reduces space above and below text */
+    line-height: 1.3;
+    /* Improved line height for better text readability */
+    /* Balances compactness with legibility */
     
-    font-size: 14px;
-    /* Slightly smaller font for this specific button */
-    /* Makes it less prominent than main action buttons */
+    font-size: 13px;
+    /* Optimized font size - not too small, not too large */
+    /* Perfect for secondary action button */
     
-    border-radius: 10px;
-    /* Slightly less rounded than other buttons */
-    /* Creates subtle visual distinction */
+    font-weight: 500 !important;
+    /* Medium weight for better readability */
+    /* Less bold than main buttons but still readable */
     
-    display: inline-block;
-    /* Ensures button width wraps around content */
-    /* Prevents button from stretching full width */
+    border-radius: 20px;
+    /* More rounded for modern, friendly appearance */
+    /* Creates pill-like shape that's visually appealing */
+    
+    border: 2px solid #ff6b6b !important;
+    /* Consistent border with brand color */
+    /* Maintains secondary button visual identity */
+    
+    background: rgba(255, 255, 255, 0.9) !important;
+    /* Semi-transparent white background */
+    /* Creates elegant glassmorphism effect */
+    
+    color: #ff6b6b !important;
+    /* Brand color text for consistency */
+    /* Ensures good contrast against white background */
+    
+    backdrop-filter: blur(5px);
+    /* Subtle blur effect for modern glassmorphism */
+    /* Creates depth and visual interest */
+    
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.15);
+    /* Soft shadow with brand color tint */
+    /* Adds depth without being overwhelming */
+    
+    display: inline-flex;
+    /* Flexbox for perfect centering of content */
+    /* Better than inline-block for text alignment */
+    
+    align-items: center;
+    /* Vertically centers text perfectly */
+    /* Ensures consistent button appearance */
+    
+    justify-content: center;
+    /* Horizontally centers text */
+    /* Creates balanced button appearance */
     
     white-space: nowrap;
     /* Prevents text from wrapping to multiple lines */
     /* Keeps button compact and predictable */
+    
+    text-transform: uppercase;
+    /* Uppercase text for modern, clean look */
+    /* Makes button feel more like a UI element */
+    
+    letter-spacing: 0.5px;
+    /* Slight letter spacing for elegant typography */
+    /* Improves readability of uppercase text */
 }
 
 .btn-back-to-top:hover {
-    /* Custom hover state for back to top button */
-    transform: translateY(-1px);
-    /* Subtle lift effect - less dramatic than other buttons */
+    /* Enhanced hover state for back to top button */
+    transform: translateY(-2px) scale(1.02);
+    /* Subtle lift and scale effect for interactive feedback */
+    /* Less dramatic than main buttons but still engaging */
     
-    box-shadow: 0 3px 10px rgba(255, 107, 107, 0.2);
-    /* Softer shadow than primary buttons */
-    /* Creates gentle elevation without overpowering */
+    background: #ff6b6b !important;
+    /* Fills with brand color on hover */
+    /* Creates satisfying visual feedback */
+    
+    color: white !important;
+    /* White text for contrast against colored background */
+    /* Ensures readability during hover state */
+    
+    border-color: #ff6b6b !important;
+    /* Maintains border color consistency */
+    /* Seamless transition between states */
+    
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    /* Enhanced shadow with more prominence */
+    /* Creates floating effect that's elegant but not overwhelming */
+    
+    backdrop-filter: blur(8px);
+    /* Increased blur for more depth on hover */
+    /* Enhances the glassmorphism effect */
 }
 
 .section-header {
@@ -854,9 +914,10 @@ body {
 /* =============== */
 
 .contact {
-    /* Contact information and form section */
-    padding: 100px 0;
-    /* Large section padding */
+    /* Contact/Custom order section */
+    padding: 100px 0 150px 0;
+    /* Large section padding with extra bottom padding */
+    /* 150px bottom creates more space before footer */
     
     background: #f8f9fa;
     /* Light gray background */
