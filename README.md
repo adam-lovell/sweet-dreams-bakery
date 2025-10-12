@@ -12,19 +12,19 @@ One-pager website for a fictional client's bakery.
 
 ## Technologies Used
 
+- GitHub Copilot
+- VS Code
 - HTML5
 - CSS3 
 - JavaScript
 - Google Fonts (Inter)
 - Responsive design principles
-- VS Code
 
 ## Live Website
 
 This website is hosted on GitHub Pages at: https://adam-lovell.github.io/sweet-dreams-bakery/
 
 ## License
-
 
 © 2025 Sweet Dreams Bakery - Adam Lovell, Owner. All rights reserved.
 
