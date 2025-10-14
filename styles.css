@@ -454,6 +454,21 @@ body {
     
     gap: 4px;
     /* 4px space between hamburger bars */
+    
+    padding: 10px;
+    /* Larger touch target for mobile - 44x44px minimum recommended */
+    
+    border-radius: 5px;
+    /* Rounded button for modern touch interface */
+    
+    transition: background-color 0.3s ease;
+    /* Smooth background transition on interaction */
+}
+
+.nav-toggle:hover {
+    /* Hover state for hamburger button */
+    background-color: rgba(255, 107, 107, 0.1);
+    /* Light brand color background on hover */
 }
 
 .bar {
@@ -467,11 +482,36 @@ body {
     background: #333;
     /* Dark color */
     
-    transition: 0.3s;
-    /* Smooth animation for transform effects */
+    transition: all 0.3s ease;
+    /* Smooth animation for transform effects - enhanced for rotation */
     
     border-radius: 2px;
     /* Slightly rounded ends */
+    
+    transform-origin: center;
+    /* Sets rotation point to center of bar */
+}
+
+/* Animated hamburger to X transformation */
+.nav-toggle.active .bar:nth-child(1) {
+    /* First bar rotates and moves down */
+    transform: translateY(7px) rotate(45deg);
+    /* Moves down 7px (4px gap + 3px bar height) and rotates 45 degrees */
+}
+
+.nav-toggle.active .bar:nth-child(2) {
+    /* Middle bar fades out */
+    opacity: 0;
+    /* Makes middle bar invisible */
+    
+    transform: translateX(-20px);
+    /* Slides left for smooth transition */
+}
+
+.nav-toggle.active .bar:nth-child(3) {
+    /* Third bar rotates and moves up */
+    transform: translateY(-7px) rotate(-45deg);
+    /* Moves up 7px and rotates -45 degrees to form X shape */
 }
 
 /* HERO SECTION */
@@ -739,16 +779,19 @@ body {
 }
 
 .menu-grid {
-    /* Grid layout for menu items */
+    /* Grid layout for menu items - enhanced mobile responsiveness */
     display: grid;
     /* CSS Grid layout */
     
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* Responsive grid - minimum 300px columns, equal width */
-    /* auto-fit creates as many columns as will fit */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Responsive grid - reduced minimum to 280px for better mobile fit */
+    /* auto-fit creates as many columns as will fit on screen */
     
     gap: 30px;
-    /* 30px space between grid items */
+    /* 30px space between grid items on desktop */
+    
+    justify-items: center;
+    /* Centers grid items horizontally - important for single column mobile layout */
 }
 
 .menu-item {
@@ -863,15 +906,19 @@ body {
 }
 
 .gallery-grid {
-    /* Grid layout for photos */
+    /* Grid layout for photos - enhanced mobile responsiveness */
     display: grid;
     /* CSS Grid */
     
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* Responsive columns, minimum 300px wide */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Responsive columns - reduced minimum to 250px for better mobile fit */
+    /* Allows 2 columns on larger mobile devices in landscape */
     
     gap: 20px;
     /* 20px space between images */
+    
+    justify-items: center;
+    /* Centers gallery items - ensures single column mobile layout is centered */
 }
 
 .gallery-item {
@@ -1201,17 +1248,254 @@ body {
     /* Smaller text size */
 }
 
-/* RESPONSIVE DESIGN */
-/* ================= */
+/* RESPONSIVE DESIGN - MOBILE FIRST APPROACH */
+/* ========================================== */
 
-/* Tablet styles - screens 768px and smaller */
+/* Extra small mobile devices - screens 360px and smaller */
+@media screen and (max-width: 360px) {
+    /* Very small mobile phones - Galaxy S5, iPhone SE, etc. */
+    
+    .container {
+        /* Reduced padding on very small screens */
+        padding: 0 15px;
+        /* Less side padding to maximize content space */
+    }
+    
+    .hero-title {
+        /* Smaller hero title on tiny screens */
+        font-size: 2rem;
+        /* Further reduced for very small screens */
+        
+        line-height: 1.1;
+        /* Tighter line spacing to fit better */
+    }
+    
+    .section-title {
+        /* Smaller section titles on tiny screens */
+        font-size: 2rem;
+        /* Reduced from 2.5rem for better fit */
+    }
+    
+    .menu-grid {
+        /* Menu grid on very small screens */
+        grid-template-columns: 1fr;
+        /* Force single column layout */
+        
+        gap: 20px;
+        /* Reduced gap for tighter layout */
+    }
+    
+    .menu-item {
+        /* Menu items on very small screens */
+        max-width: 100%;
+        /* Ensure full width usage */
+        
+        margin: 0 auto;
+        /* Center items */
+    }
+    
+    .gallery-grid {
+        /* Gallery on very small screens */
+        grid-template-columns: 1fr;
+        /* Single column only */
+        
+        gap: 15px;
+        /* Smaller gap for compact layout */
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        /* Form elements on very small screens */
+        font-size: 16px;
+        /* Prevents zoom on iOS devices when focusing input fields */
+    }
+}
+
+/* Small mobile devices - screens 480px and smaller */
+@media screen and (max-width: 480px) {
+    /* Standard mobile phones */
+    
+    .section-title {
+        /* Section titles on small mobile */
+        font-size: 2.5rem;
+        /* Balanced size for mobile readability */
+    }
+    
+    .hero-title {
+        /* Hero title on small mobile */
+        font-size: 2.5rem;
+        /* Consistent with section titles */
+    }
+    
+    .hero-buttons {
+        /* Hero buttons on small mobile */
+        flex-direction: column;
+        /* Stack buttons vertically for better touch interaction */
+        
+        align-items: center;
+        /* Center buttons horizontally */
+        
+        gap: 15px;
+        /* Space between stacked buttons */
+    }
+    
+    .btn {
+        /* All buttons on small mobile */
+        width: 100%;
+        /* Full width for easier touch interaction */
+        
+        max-width: 300px;
+        /* Reasonable maximum width */
+        
+        padding: 15px 24px;
+        /* Larger padding for better touch targets (minimum 44px height) */
+        
+        font-size: 16px;
+        /* Consistent font size to prevent iOS zoom */
+    }
+    
+    .menu-categories {
+        /* Menu filter buttons on small mobile */
+        flex-direction: column;
+        /* Stack filter buttons vertically */
+        
+        align-items: center;
+        /* Center buttons */
+        
+        gap: 10px;
+        /* Space between filter buttons */
+    }
+    
+    .menu-btn {
+        /* Menu filter buttons styling on small mobile */
+        width: 200px;
+        /* Fixed width for visual consistency */
+        
+        padding: 12px 20px;
+        /* Touch-friendly padding */
+    }
+    
+    .menu-grid {
+        /* Menu grid on small mobile */
+        grid-template-columns: 1fr;
+        /* Single column layout for focus */
+        
+        gap: 25px;
+        /* Adequate spacing between items */
+    }
+    
+    .gallery-grid {
+        /* Gallery grid on small mobile */
+        grid-template-columns: 1fr;
+        /* Single column layout */
+        
+        gap: 20px;
+        /* Comfortable spacing */
+    }
+    
+    .gallery-item {
+        /* Gallery items on small mobile */
+        height: 250px;
+        /* Slightly smaller height for mobile screens */
+        
+        max-width: 100%;
+        /* Ensure full width utilization */
+    }
+    
+    .contact-form-container {
+        /* Contact form on small mobile */
+        padding: 30px 20px;
+        /* Reduced padding for more content space */
+        
+        margin: 0 10px;
+        /* Side margins for visual breathing room */
+    }
+    
+    .hero-img {
+        /* Hero image on small mobile */
+        max-height: 300px;
+        /* Smaller max height to preserve screen real estate */
+        
+        border-radius: 10px;
+        /* Slightly smaller border radius for mobile */
+    }
+    
+    .about-img {
+        /* About section image on small mobile */
+        max-height: 300px;
+        /* Consistent with hero image */
+        
+        border-radius: 10px;
+        /* Matching border radius */
+    }
+}
+
+/* Medium mobile devices - screens 640px and smaller */
+@media screen and (max-width: 640px) {
+    /* Larger mobile phones and small tablets in portrait */
+    
+    .hero {
+        /* Hero section on medium mobile */
+        grid-template-columns: 1fr;
+        /* Single column layout */
+        
+        gap: 30px;
+        /* Comfortable spacing */
+        
+        text-align: center;
+        /* Center all content */
+        
+        padding: 120px 20px 60px;
+        /* Adjusted padding for better mobile experience */
+    }
+    
+    .hero-content {
+        /* Hero content on medium mobile */
+        justify-self: center;
+        /* Center in grid cell */
+        
+        max-width: 100%;
+        /* Use available width */
+    }
+    
+    .menu-grid {
+        /* Menu grid on medium mobile */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        /* Allow 2 columns if screen width permits */
+        
+        gap: 25px;
+        /* Balanced spacing */
+    }
+    
+    .gallery-grid {
+        /* Gallery on medium mobile */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* Allow 2 columns on wider mobile screens */
+        
+        gap: 15px;
+        /* Tighter spacing for 2-column layout */
+    }
+    
+    .about-content,
+    .contact-content {
+        /* About and contact sections on medium mobile */
+        flex-direction: column;
+        /* Stack content vertically */
+        
+        gap: 30px;
+        /* Space between stacked elements */
+    }
+}
+
+/* Large mobile/small tablet - screens 768px and smaller */
 @media screen and (max-width: 768px) {
     /* Media query targets tablet and small desktop screens */
     
     .nav-menu {
-        /* Navigation menu on tablets */
+        /* Navigation menu on tablets and mobile - enhanced mobile experience */
         position: fixed;
-        /* Fixed position for mobile menu */
+        /* Fixed position for mobile menu overlay */
         
         left: -100%;
         /* Hidden off-screen to the left */
@@ -1222,20 +1506,32 @@ body {
         flex-direction: column;
         /* Vertical menu layout */
         
-        background-color: white;
-        /* White background */
+        background-color: rgba(255, 255, 255, 0.98);
+        /* Semi-transparent white for modern glass effect */
+        
+        backdrop-filter: blur(10px);
+        /* Blur effect for glassmorphism - modern mobile UI pattern */
         
         width: 100%;
         /* Full screen width */
         
+        height: calc(100vh - 70px);
+        /* Full remaining screen height for immersive mobile menu */
+        
         text-align: center;
         /* Centered menu items */
         
-        transition: 0.3s;
-        /* Smooth slide animation */
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Enhanced easing for smoother, more natural animation */
         
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        /* Subtle shadow */
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        /* More prominent shadow for better visual separation */
+        
+        z-index: 999;
+        /* Ensures menu appears above other content */
+        
+        overflow-y: auto;
+        /* Allow scrolling if menu content is too tall */
     }
     
     .nav-menu.active {
@@ -1245,21 +1541,64 @@ body {
     }
     
     .nav-list {
-        /* Navigation list on mobile */
+        /* Navigation list on mobile - enhanced touch experience */
         flex-direction: column;
         /* Vertical layout */
         
-        padding: 20px 0;
-        /* Padding top and bottom */
+        padding: 40px 0;
+        /* Increased padding for better visual balance */
         
-        gap: 0;
-        /* No gap - items touch */
+        gap: 10px;
+        /* Small gap between items for visual separation */
+        
+        justify-content: center;
+        /* Center items vertically in available space */
+        
+        min-height: 50%;
+        /* Take at least half of menu height */
     }
     
     .nav-item {
-        /* Individual nav items on mobile */
-        padding: 15px 0;
-        /* Larger touch targets */
+        /* Individual nav items on mobile - optimized for touch */
+        padding: 0;
+        /* Remove padding - let links handle touch area */
+    }
+    
+    .nav-link {
+        /* Navigation links on mobile - enhanced touch targets */
+        display: block;
+        /* Full width clickable area */
+        
+        padding: 18px 30px;
+        /* Large touch-friendly padding (minimum 44px height) */
+        
+        font-size: 18px;
+        /* Larger text for better mobile readability */
+        
+        font-weight: 500;
+        /* Consistent weight */
+        
+        border-radius: 12px;
+        /* Rounded touch targets for modern mobile UI */
+        
+        margin: 0 20px;
+        /* Side margins for visual breathing room */
+        
+        transition: all 0.3s ease;
+        /* Smooth transitions for all properties */
+    }
+    
+    .nav-link:hover,
+    .nav-link:focus {
+        /* Enhanced mobile link interactions */
+        background-color: rgba(255, 107, 107, 0.1);
+        /* Light brand color background */
+        
+        color: #ff6b6b;
+        /* Brand color text */
+        
+        transform: translateX(5px);
+        /* Subtle slide effect for tactile feedback */
     }
     
     .nav-toggle {
@@ -1390,6 +1729,158 @@ body {
         max-height: 300px;
         /* Smaller max height on mobile devices */
         /* Prevents image from overwhelming small screens */
+    }
+    
+    /* Enhanced mobile form styling for better touch interaction */
+    .form-group {
+        /* Form groups on mobile - improved spacing and touch navigation */
+        margin-bottom: 25px;
+        /* Increased spacing between form fields for comfortable touch navigation */
+    }
+    
+    .form-group label {
+        /* Form labels on mobile - enhanced readability */
+        font-size: 16px;
+        /* Larger labels for better readability on small screens */
+        
+        margin-bottom: 8px;
+        /* More space between label and input for visual clarity */
+        
+        font-weight: 600;
+        /* Slightly bolder for better visibility on mobile screens */
+        
+        display: block;
+        /* Ensure labels take full width */
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        /* Form inputs on mobile - optimized for touch interaction */
+        padding: 16px 20px;
+        /* Larger padding for comfortable touch interaction and better visual hierarchy */
+        
+        font-size: 16px;
+        /* 16px prevents automatic zoom on iOS devices when focusing input fields */
+        
+        border: 2px solid #e9ecef;
+        /* Slightly thicker border for better visibility and touch feedback */
+        
+        border-radius: 12px;
+        /* More rounded corners consistent with modern mobile UI patterns */
+        
+        min-height: 50px;
+        /* Minimum height ensures comfortable touch targets (44px+ recommended) */
+        
+        width: 100%;
+        /* Full width for consistent layout */
+        
+        -webkit-appearance: none;
+        /* Remove iOS default styling for better custom appearance */
+        
+        -moz-appearance: none;
+        /* Remove Firefox default styling */
+        
+        appearance: none;
+        /* Standard property - remove default browser styling for consistent cross-platform appearance */
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        /* Enhanced focus states for mobile accessibility */
+        border-color: #ff6b6b;
+        /* Brand color border on focus */
+        
+        outline: none;
+        /* Remove default outline */
+        
+        box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+        /* Prominent focus ring for accessibility - meets WCAG guidelines */
+        
+        transform: translateY(-2px);
+        /* Subtle lift effect for tactile feedback */
+    }
+    
+    .form-group textarea {
+        /* Textareas on mobile - optimized for text input */
+        min-height: 120px;
+        /* Adequate height for comfortable multi-line text entry */
+        
+        resize: vertical;
+        /* Allow vertical resizing only to prevent layout issues */
+        
+        line-height: 1.5;
+        /* Better line spacing for readability */
+    }
+    
+    .form-group select {
+        /* Select dropdowns on mobile */
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+        /* Custom dropdown arrow for consistent cross-platform appearance */
+        
+        background-position: right 12px center;
+        /* Position arrow on right side */
+        
+        background-repeat: no-repeat;
+        /* Prevent arrow repetition */
+        
+        background-size: 16px;
+        /* Size of dropdown arrow */
+        
+        padding-right: 48px;
+        /* Space for custom arrow */
+    }
+    
+    /* Mobile-specific button improvements for better touch interaction */
+    .contact-form .btn {
+        /* Submit button on mobile forms - enhanced touch experience */
+        width: 100%;
+        /* Full width for easy touching and consistent layout */
+        
+        padding: 18px 24px;
+        /* Extra padding for better touch target (meets 44px minimum) */
+        
+        font-size: 18px;
+        /* Larger text for better readability on mobile screens */
+        
+        margin-top: 20px;
+        /* Space above submit button for visual separation */
+        
+        min-height: 54px;
+        /* Ensure minimum touch target size for accessibility */
+        
+        font-weight: 600;
+        /* Slightly bolder text for better visibility */
+    }
+    
+    /* Enhanced mobile footer styling */
+    .footer-content {
+        /* Footer content on mobile */
+        flex-direction: column;
+        /* Stack footer sections vertically */
+        
+        text-align: center;
+        /* Center all footer content */
+        
+        gap: 30px;
+        /* Space between footer sections */
+    }
+    
+    .footer-section {
+        /* Individual footer sections on mobile */
+        margin-bottom: 0;
+        /* Remove bottom margin - gap handles spacing */
+    }
+    
+    .footer-section p,
+    .footer-section .hours p {
+        /* Footer text on mobile */
+        font-size: 16px;
+        /* Slightly larger text for better mobile readability */
+        
+        line-height: 1.6;
+        /* Better line spacing for reading on small screens */
     }
 }
 
